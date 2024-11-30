@@ -1,6 +1,6 @@
 
 
-const MyButton = ({ input1, input2, onClick }) => {
+const MyButton = ({ input1, input2, onClick,onReset}) => {
     const add = () => {
         return onClick(parseFloat(input1) + parseFloat(input2));
     }
@@ -19,7 +19,7 @@ const MyButton = ({ input1, input2, onClick }) => {
         return onClick(parseFloat(input1) * parseFloat(input2));
     }
     const ResetInput = () => {
-        return onClick("")
+        return onReset("")
     }
     return (
 

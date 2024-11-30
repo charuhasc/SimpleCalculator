@@ -12,6 +12,9 @@ const Header = () => {
   }
   const handleButtonClick=(value)=>{
     setOutput(value)
+    if(output===""){
+      setMyInput1(null);setMyInput2(null);
+    }
 
   }
   useEffect=(()=>{
@@ -19,6 +22,10 @@ const Header = () => {
       setMyInput1(null);setMyInput2(null);
     }
   },[output])
+  const handleReset=()=>{
+    setOutput("");
+    setMyInput1("");setMyInput2("");
+  }
   return (
 <div className='container'>
   <h1>Welcome to my react App!</h1>
@@ -38,7 +45,7 @@ const Header = () => {
 
 
 
-    <MyButton input1={myInput1} input2={myInput2} onClick={handleButtonClick} />
+    <MyButton input1={myInput1} input2={myInput2} onClick={handleButtonClick} onReset={handleReset} />
   </div>
   )
 }
